@@ -5,8 +5,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = () =>
-    `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R.Tolkien', 295, false);
@@ -28,20 +26,28 @@ function addBookToLibrary() {
 
 function render(arr = myLibrary) {
   library__tbody.innerHTML = arr
-    .map((book) => {
+    .map((book, idx) => {
       return `
-        <tr>
+        <tr data-book=${idx}>
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>
             <td>${book.read}</td>
+            <td><button onclick=removeBook(${idx})>Remove</button</td>
         </tr>
     `;
     })
     .join('');
 }
 
+const removeBook = (index) => {
+  myLibrary.splice(index, 1);
+  render();
+};
+
 const library__tbody = document.getElementById('library');
-console.log(library__tbody);
+const newBook__button = document.getElementById('new-book');
 
 render();
+
+newBook__button.addEventListener('click', addBookToLibrary);
