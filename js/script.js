@@ -22,15 +22,26 @@ function addBookToLibrary() {
   const book = new Book(bookName, authorName, pages, readBook);
 
   myLibrary.push(book);
+
+  render();
 }
 
-function render(arr) {
-  arr.map((book) => {
-    console.log(book.title);
-  });
+function render(arr = myLibrary) {
+  library__tbody.innerHTML = arr
+    .map((book) => {
+      return `
+        <tr>
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.pages}</td>
+            <td>${book.read}</td>
+        </tr>
+    `;
+    })
+    .join('');
 }
 
 const library__tbody = document.getElementById('library');
 console.log(library__tbody);
 
-render(myLibrary);
+render();
