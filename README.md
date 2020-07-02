@@ -2,12 +2,11 @@
 
 ## Todo
 
-1. Refactor Code
-1. Add Local Storage
+1. Refactor Code - Change to Classes
+1. Convert to Firebase
 1. Convert from tables to cards
 1. Ability to add images
 1. Editing the Book
-1. Change to firebase storage when UI is clean
 
 ## Resources
 
