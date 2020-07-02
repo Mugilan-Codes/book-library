@@ -1,4 +1,7 @@
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem('book-library-data')) || [];
+const saveData = (arr) => {
+  localStorage.setItem('book-library-data', JSON.stringify(arr));
+};
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -12,24 +15,21 @@ Book.prototype.switchStatus = function () {
   render();
 };
 
-let dummyData = [
-  new Book('The Hobbit', 'J.R.R.Tolkien', 295, false),
-  new Book('Harry Potter', 'J.K.Rowling', 400, true),
-  new Book('The Lord of the rings', 'J.R.R.Tolkien', 900, true),
-];
-myLibrary.push(...dummyData);
-
 function addBookToLibrary() {
   const bookName = form['book-name'].value;
   const authorName = form['author-name'].value;
   const pages = form['no-of-pages'].value;
   const readBook = form['read-status'].value;
 
-  const book = new Book(bookName, authorName, pages, readBook);
+  readStatus = readBook === 'yes' ? true : false;
+
+  const book = new Book(bookName, authorName, pages, readStatus);
 
   myLibrary.push(book);
 
   form.reset();
+
+  saveData(myLibrary);
 
   render();
 }
@@ -53,6 +53,7 @@ function render(arr = myLibrary) {
 
 const removeBook = (index) => {
   myLibrary.splice(index, 1);
+  saveData(myLibrary);
   render();
 };
 
@@ -75,7 +76,6 @@ const windowOnClick = (e) => {
   if (e.target === modal) toggleModal();
 };
 
-// newBook__button.addEventListener('click', addBookToLibrary);
 newBook__button.addEventListener('click', toggleModal);
 window.addEventListener('click', windowOnClick);
 
