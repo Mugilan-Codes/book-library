@@ -13,9 +13,17 @@ body {
   align-items: center;
 }
 
+header,
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 header {
   flex: 1;
   position: relative;
+  align-items: center;
 }
 
 #repo-link {
@@ -25,8 +33,9 @@ header {
 }
 
 main {
-  flex: 8;
+  flex: 9;
   position: relative;
+  align-items: flex-start;
 }
 
 #new-book {
