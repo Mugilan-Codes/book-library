@@ -1,15 +1,33 @@
 let myLibrary = [];
 
+let dummyData = [
+  {
+    title: 'The Hobbit',
+    author: 'J.R.R.Tolkien',
+    pages: 295,
+    read: false,
+  },
+  {
+    title: 'Harry Potter',
+    author: 'J.K.Rowling',
+    pages: 400,
+    read: true,
+  },
+  {
+    title: 'The Lord of the rings',
+    author: 'J.R.R.Tolkien',
+    pages: 900,
+    read: true,
+  },
+];
+myLibrary.push(...dummyData);
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
-
-const theHobbit = new Book('The Hobbit', 'J.R.R.Tolkien', 295, false);
-const lotr = new Book('The Lord of the rings', 'J.R.R.Tolkien', 900, true);
-myLibrary.push(theHobbit, lotr);
 
 function addBookToLibrary() {
   const bookName = prompt('Enter the name of the book');

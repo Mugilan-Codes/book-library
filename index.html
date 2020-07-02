@@ -4,25 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Library</title>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Pages</th>
-          <th>Status</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="library"></tbody>
-    </table>
+    <div class="wrapper">
+      <header>
+        <h1>MY BOOK LIBRARY</h1>
+        <a id="repo-link" href="https://github.com/Mugilan-Codes/book-library"
+          >Repo</a
+        >
+      </header>
 
-    <button id="new-book">NEW BOOK</button>
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read?</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody id="library"></tbody>
+        </table>
+
+        <button class="btn" id="new-book">NEW BOOK</button>
+      </main>
+    </div>
 
     <script src="js/script.js"></script>
   </body>
