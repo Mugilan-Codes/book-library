@@ -61,6 +61,7 @@ const toggleRead = (idx) => {
 const library__tbody = document.getElementById('library');
 const newBook__button = document.getElementById('new-book');
 const modal = document.getElementById('myModal');
+const form = modal.querySelector('form');
 
 render();
 
@@ -75,3 +76,5 @@ const windowOnClick = (e) => {
 // newBook__button.addEventListener('click', addBookToLibrary);
 newBook__button.addEventListener('click', toggleModal);
 window.addEventListener('click', windowOnClick);
+
+form.addEventListener('submit', addBookToLibrary)

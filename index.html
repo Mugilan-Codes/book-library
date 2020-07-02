@@ -48,11 +48,30 @@
           </div>
 
           <div class="form-group">
-            <label for="book-name">Enter book name</label>
-            <input type="text" name="book-name" id="book-name" required />
+            <label for="author-name">Enter author name</label>
+            <input type="text" name="author-name" id="author-name" required />
           </div>
 
-          <button>Add Book</button>
+          <div class="form-group">
+            <label for="no-of-pages">Enter the number of pages</label>
+            <input
+              type="number"
+              name="no-of-pages"
+              id="no-of-pages"
+              min="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="read-status">Have you read the book</label>
+            <select name="read-status" id="read-status">
+              <option value="yes">Yes</option>
+              <option value="no" selected>No</option>
+            </select>
+          </div>
+
+          <input type="submit" value="Add Book" />
         </form>
       </div>
     </div>
