@@ -2,8 +2,11 @@
 
 ## Todo
 
-1. Add UI
-1. Get Local Storage or Firebase Storage
+1. Refactor Code
+1. Add Local Storage or Firebase Storage
+1. Convert from tables to cards
+1. Ability to add images
+1. Editing the Book
 
 ## Resources
 

@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background: rgba(46, 186, 196, 0.877);
 }
 
 header,
@@ -24,6 +25,7 @@ header {
   flex: 1;
   position: relative;
   align-items: center;
+  background: rgba(63, 66, 30, 0.87);
 }
 
 #repo-link {
@@ -36,6 +38,7 @@ main {
   flex: 9;
   position: relative;
   align-items: flex-start;
+  font-size: 2rem;
 }
 
 #new-book {
