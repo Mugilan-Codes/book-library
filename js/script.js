@@ -60,10 +60,18 @@ const toggleRead = (idx) => {
 
 const library__tbody = document.getElementById('library');
 const newBook__button = document.getElementById('new-book');
+const modal = document.getElementById('myModal');
 
 render();
 
+const toggleModal = () => {
+  modal.classList.toggle('show-model');
+};
+
+const windowOnClick = (e) => {
+  if (e.target === modal) toggleModal();
+};
+
 // newBook__button.addEventListener('click', addBookToLibrary);
-newBook__button.addEventListener('click', () => {
-  document.getElementById('myModal').classList.toggle('show-model');
-});
+newBook__button.addEventListener('click', toggleModal);
+window.addEventListener('click', windowOnClick);
