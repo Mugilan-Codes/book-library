@@ -63,4 +63,7 @@ const newBook__button = document.getElementById('new-book');
 
 render();
 
-newBook__button.addEventListener('click', addBookToLibrary);
+// newBook__button.addEventListener('click', addBookToLibrary);
+newBook__button.addEventListener('click', () => {
+  document.getElementById('myModal').classList.toggle('show-model');
+});
