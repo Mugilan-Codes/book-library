@@ -20,14 +20,16 @@ let dummyData = [
 myLibrary.push(...dummyData);
 
 function addBookToLibrary() {
-  const bookName = prompt('Enter the name of the book');
-  const authorName = prompt('Enter the name of the author');
-  const pages = Number(prompt('Number of pages'));
-  const readBook = Boolean(prompt('Have you read the book'));
+  const bookName = form['book-name'].value;
+  const authorName = form['author-name'].value;
+  const pages = form['no-of-pages'].value;
+  const readBook = form['read-status'].value;
 
   const book = new Book(bookName, authorName, pages, readBook);
 
   myLibrary.push(book);
+
+  form.reset();
 
   render();
 }
@@ -77,4 +79,8 @@ const windowOnClick = (e) => {
 newBook__button.addEventListener('click', toggleModal);
 window.addEventListener('click', windowOnClick);
 
-form.addEventListener('submit', addBookToLibrary)
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  toggleModal();
+  addBookToLibrary();
+});
